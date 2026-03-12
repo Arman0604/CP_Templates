@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 vector<int> nextGreaterElement(vector<int>& arr) {
     int n = arr.size();
     vector<int> ans(n, -1);
