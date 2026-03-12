@@ -1,11 +1,11 @@
-vector<int> previousGreaterElement(vector<int>& arr) {
+vector<int> previousSmallerElement(vector<int>& arr) {
     int n = arr.size();
     vector<int> ans(n, -1);
     stack<int> st;
 
     for(int i = 0; i < n; i++) {
 
-        while(!st.empty() && st.top() <= arr[i]) {
+        while(!st.empty() && st.top() >= arr[i]) {
             st.pop();
         }
 
