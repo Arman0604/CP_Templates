@@ -61,3 +61,36 @@ void postorder(Node* root) {
     // Step 3: print root node
     cout << root->data << " ";
 }
+
+void levelOrder(Node* root) {
+
+    // if tree is empty
+    if(root == NULL) {
+        return;
+    }
+
+    queue<Node*> q;
+
+    // push root node into queue
+    q.push(root);
+
+    while(!q.empty()) {
+
+        // get front node
+        Node* current = q.front();
+        q.pop();
+
+        // print node value
+        cout << current->data << " ";
+
+        // push left child if it exists
+        if(current->left != NULL) {
+            q.push(current->left);
+        }
+
+        // push right child if it exists
+        if(current->right != NULL) {
+            q.push(current->right);
+        }
+    }
+}
