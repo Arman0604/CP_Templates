@@ -1,3 +1,10 @@
+// Steps -
+
+// Sort all edges by weight.
+// Pick the smallest edge.
+// Add it to the MST if it does not create a cycle.
+// Use Disjoint Set Union (Union-Find) to detect cycles.
+
 // structure to represent an edge
 struct Edge {
     int u, v, weight;
