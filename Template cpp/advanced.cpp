@@ -17,15 +17,6 @@ void _print(string x) { cerr << x; }
 void _print(char x) { cerr << x; }
 void _print(double x) { cerr << x; }
 
-template <class T, class V>
-void _print(pair<T,V> p){
-    cerr << "{";
-    _print(p.first);
-    cerr << ", ";
-    _print(p.second);
-    cerr << "}";
-}
-
 template <class T>
 void _print(vector<T> v){
     cerr << "[ ";
@@ -36,24 +27,36 @@ void _print(vector<T> v){
     cerr << "]";
 }
 
-template <class T>
-void _print(set<T> s){
-    cerr << "{ ";
-    for(auto i : s){
-        _print(i);
-        cerr << " ";
-    }
+template <class T, class V>
+void _print(pair<T,V> p){
+    cerr << "{";
+    _print(p.first);
+    cerr << ", ";
+    _print(p.second);
     cerr << "}";
 }
 
-template <class T, class V>
-void _print(map<T,V> m){
-    cerr << "{ ";
-    for(auto i : m){
-        _print(i);
-        cerr << " ";
+// ================= Solve Function =================
+void solve() {
+
+    int n;
+    cin >> n;
+
+    vector<int> a(n);
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
     }
-    cerr << "}";
+
+    debug(n);
+    debug(a);
+
+    // example logic
+    sort(a.begin(), a.end());
+
+    for(int x : a) {
+        cout << x << " ";
+    }
+    cout << "\n";
 }
 
 // ================= Main =================
@@ -65,16 +68,12 @@ int main() {
     freopen("Error.txt", "w", stderr);
 #endif
 
-    int n;
-    cin >> n;
+    int t;
+    cin >> t;
 
-    vector<int> a(n);
-    for(int i=0;i<n;i++) cin >> a[i];
-
-    debug(n);
-    debug(a);
-
-    cout << "Program executed\n";
+    while(t--) {
+        solve();
+    }
 
     return 0;
 }
