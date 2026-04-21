@@ -22,7 +22,8 @@ void dijkstra(int n, vector<vector<pair<int,int>>> &adj, int src) {
         int currentDist = pq.top().first;
         int node = pq.top().second;
         pq.pop();
-
+        if (currentDist != dist[node]) continue;
+        
         // visit all neighbors
         for(auto edge : adj[node]) {
 
